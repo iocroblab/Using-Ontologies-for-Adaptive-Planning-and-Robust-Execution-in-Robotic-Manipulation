@@ -1,0 +1,148 @@
+<?xml version="1.0" ?>
+<root BTCPP_format="4" main_tree_to_execute="ec_tree" time_of_generation="15:38:32">
+  <BehaviorTree ID="ec_tree">
+    <Sequence name="Main Sequence">
+      <SubTree ID="Execution Tree"/>
+    </Sequence>
+  </BehaviorTree>
+  <BehaviorTree ID="Execution Tree">
+    <Sequence name="Task Plan Sequence">
+      <SubTree ID="High Behavior Z_1" robot="robot2" manipulationobject="can1" input1="{input1}" output2="{output2}"/>
+    </Sequence>
+  </BehaviorTree>
+  <BehaviorTree ID="High Behavior Z_1" _applied_flavor__1="mrs_flavor_3_postcondition_g_j_2" _applied_flavor__2="mrs_flavor_1_precondition_e_h_2" _applied_flavor__3="mrs_flavor_2_holdcondition_f_i_2" _applied_flavor__4="mrs_flavor_5_actionrecovery_m_i_2" _applied_flavor__5="mrs_flavor_4_retriable_d_h_2">
+    <Seed ID="" v_edge="dashed" _s_robot="robot2" _s_manipulationobject="can1"/>
+    <Sequence>
+      <Fallback name="Retry Fallback Behavior A">
+        <ForceFailure>
+          <Script code="mrs_flavor_4_retriable_d_h_2_retry_count:=1"/>
+        </ForceFailure>
+        <RetryUntilSuccessful name="Retry Behavior A" num_attempts="3">
+          <Sequence _post="mrs_flavor_4_retriable_d_h_2_retry_count=mrs_flavor_4_retriable_d_h_2_retry_count+1">
+            <Action ID="PrintMsg" message1="Attempt"/>
+            <Action ID="PrintInt" message1="{mrs_flavor_4_retriable_d_h_2_retry_count}"/>
+            <Sequence name="MAIN MRS of Behavior A" v_highlight="true" v_color="cyan">
+              <Fallback name="PRC MRS of Behavior A">
+                <Sequence name="PRC COND Behavior A">
+                  <Script code="ec_1:=0"/>
+                  <SubTree ID="Condition E_1_1" _onFailure="ec_1:=1" test_result_e="{test_result_e}" robot="robot2"/>
+                </Sequence>
+                <Sequence name="PRC REC Behavior A">
+                  <SubTree ID="Recovery H_1_2" test_result_h="{test_result_h}" robot="robot2" _skipIf="ec_1!=1"/>
+                </Sequence>
+              </Fallback>
+              <Seed ID="" v_edge="dashed" _s_robot="robot2" _s_manipulationobject="can1" _s_object="can1"/>
+              <ReactiveSequence name="HOC MRS of Behavior A">
+                <Fallback name="HOC MRS of Behavior A">
+                  <Sequence name="HOC COND Behavior A">
+                    <Script code="ec_2:=0"/>
+                    <SubTree ID="Condition F_1_3" _onFailure="ec_2:=1" test_result_f="{test_result_f}" object="can1"/>
+                  </Sequence>
+                  <Sequence name="HOC REC Behavior A">
+                    <SubTree ID="Recovery I_1_4" test_result_i="{test_result_i}" object="can1" _skipIf="ec_2!=1"/>
+                  </Sequence>
+                </Fallback>
+                <Fallback name="ACTION REC MRS Behavior A" v_highlight="true" v_color="cyan">
+                  <SubTree ID="Behavior A_1_5" robot="{robot}" object="{manipulationobject}"/>
+                  <Sequence name="REC Behavior A">
+                    <SubTree ID="Recovery I_1_6"/>
+                  </Sequence>
+                </Fallback>
+              </ReactiveSequence>
+              <Fallback name="POC MRS of Behavior A">
+                <Sequence name="POC COND Behavior A">
+                  <Script code="ec_0:=0"/>
+                  <SubTree ID="Condition G_1_7" _onFailure="ec_0:=1" test_result_g="{test_result_g}" robot="robot2" object="can1"/>
+                </Sequence>
+                <Sequence name="POC REC Behavior A">
+                  <SubTree ID="Recovery J_1_8" test_result_j="{test_result_j}" robot="robot2" object="can1" _skipIf="ec_0!=1"/>
+                </Sequence>
+              </Fallback>
+            </Sequence>
+          </Sequence>
+        </RetryUntilSuccessful>
+        <Sequence name="REC RETRY Behavior A">
+          <SubTree ID="Recovery H_1_9"/>
+        </Sequence>
+      </Fallback>
+      <SubTree ID="Behavior B_1_10" robot="{robot}" object="{manipulationobject}"/>
+      <SubTree ID="Behavior C_1_11" robot="{robot}" object="{manipulationobject}"/>
+      <SubTree ID="Behavior D_1_12" robot="{robot}" object="{manipulationobject}"/>
+      <Action ID="Primitive M" robot="{robot}" object="{manipulationobject}" output="{output2}"/>
+    </Sequence>
+  </BehaviorTree>
+  <BehaviorTree ID="Condition E_1_1">
+    <Seed ID="" v_edge="dashed" _s_robot="robot2" _s_manipulationobject="can1" _s_test_result_e="{test_result_e}"/>
+    <Sequence>
+      <Action ID="Primitive O" robot="{robot}" object="xxx"/>
+    </Sequence>
+  </BehaviorTree>
+  <BehaviorTree ID="Recovery H_1_2">
+    <Seed ID="" v_edge="dashed" _s_robot="robot2" _s_manipulationobject="can1" _s_test_result_h="{test_result_h}"/>
+    <Sequence>
+      <Action ID="Primitive O" robot="{robot}" object="xxx"/>
+    </Sequence>
+  </BehaviorTree>
+  <BehaviorTree ID="Condition F_1_3">
+    <Seed ID="" v_edge="dashed" _s_robot="robot2" _s_manipulationobject="can1" _s_test_result_f="{test_result_f}" _s_object="can1"/>
+    <Sequence>
+      <Action ID="Primitive O" robot="xxx" object="{object}"/>
+    </Sequence>
+  </BehaviorTree>
+  <BehaviorTree ID="Recovery I_1_4">
+    <Seed ID="" v_edge="dashed" _s_robot="robot2" _s_manipulationobject="can1" _s_test_result_i="{test_result_i}" _s_object="can1"/>
+    <Sequence>
+      <Action ID="Primitive O" robot="xxx" object="{object}"/>
+    </Sequence>
+  </BehaviorTree>
+  <BehaviorTree ID="Behavior A_1_5">
+    <Seed ID="" v_edge="dashed" _s_robot="robot2" _s_manipulationobject="can1" _s_object="can1"/>
+    <Fallback>
+      <Action ID="Primitive O" robot="{robot}" object="{object}"/>
+      <Action ID="Primitive N" robot="{robot}" object="{object}"/>
+    </Fallback>
+  </BehaviorTree>
+  <BehaviorTree ID="Recovery I_1_6">
+    <Seed ID="" v_edge="dashed" _s_robot="robot2" _s_manipulationobject="can1"/>
+    <Sequence>
+      <Action ID="Primitive O" robot="xxx" object="{object}"/>
+    </Sequence>
+  </BehaviorTree>
+  <BehaviorTree ID="Condition G_1_7">
+    <Seed ID="" v_edge="dashed" _s_robot="robot2" _s_manipulationobject="can1" _s_test_result_g="{test_result_g}" _s_object="can1"/>
+    <Sequence>
+      <Action ID="Primitive O" robot="{robot}" object="{object}"/>
+    </Sequence>
+  </BehaviorTree>
+  <BehaviorTree ID="Recovery J_1_8">
+    <Seed ID="" v_edge="dashed" _s_robot="robot2" _s_manipulationobject="can1" _s_test_result_j="{test_result_j}" _s_object="can1"/>
+    <Sequence>
+      <Action ID="Primitive O" robot="{robot}" object="{object}"/>
+    </Sequence>
+  </BehaviorTree>
+  <BehaviorTree ID="Recovery H_1_9">
+    <Seed ID="" v_edge="dashed" _s_robot="robot2" _s_manipulationobject="can1"/>
+    <Sequence>
+      <Action ID="Primitive O" robot="{robot}" object="xxx"/>
+    </Sequence>
+  </BehaviorTree>
+  <BehaviorTree ID="Behavior B_1_10">
+    <Seed ID="" v_edge="dashed" _s_robot="robot2" _s_manipulationobject="can1" _s_object="can1"/>
+    <Sequence>
+      <Action ID="Primitive O" robot="{robot}" object="{object}"/>
+    </Sequence>
+  </BehaviorTree>
+  <BehaviorTree ID="Behavior C_1_11">
+    <Seed ID="" v_edge="dashed" _s_robot="robot2" _s_manipulationobject="can1" _s_object="can1"/>
+    <Sequence>
+      <Action ID="Primitive N" robot="{robot}" object="{object}"/>
+    </Sequence>
+  </BehaviorTree>
+  <BehaviorTree ID="Behavior D_1_12">
+    <Seed ID="" v_edge="dashed" _s_robot="robot2" _s_manipulationobject="can1" _s_object="can1"/>
+    <Sequence>
+      <Action ID="Primitive O" robot="{robot}" object="{object}"/>
+    </Sequence>
+  </BehaviorTree>
+  <!--15:38:32-->
+</root>

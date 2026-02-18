@@ -1,0 +1,25 @@
+digraph {
+	node [shape=box]
+	layout=dot nodesep=0.3 overlaps=false rankdir=TB shape=box splines=polyline
+	1 [label="High Behavior Z" color=black fillcolor=lightyellow fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	1
+	2 [label="→" color=black fillcolor=lightpink fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.4]
+	1 -> 2 [label="" color=black headport=n style="" tailport=s weight=1]
+	2
+	3 [label="Behavior A" color=black fillcolor=lightyellow fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	2 -> 3 [label="" color=black headport=n style="" tailport=s weight=1]
+	3
+	4 [label="Behavior B" color=black fillcolor=lightyellow fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	2 -> 4 [label="" color=black headport=n style="" tailport=s weight=1]
+	4
+	5 [label="Behavior C" color=black fillcolor=lightyellow fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	2 -> 5 [label="" color=black headport=n style="" tailport=s weight=1]
+	5
+	6 [label="Behavior D" color=black fillcolor=lightyellow fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	2 -> 6 [label="" color=black headport=n style="" tailport=s weight=1]
+	6
+	7 [label="Primitive M" color=black fillcolor=powderblue fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	2 -> 7 [label="" color=black headport=n style="" tailport=s weight=1]
+	7
+	title [label="No Flavors activate" fontsize=12 height=0.3 style=dashed]
+}

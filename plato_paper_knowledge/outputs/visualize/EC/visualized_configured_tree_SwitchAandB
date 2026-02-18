@@ -1,0 +1,100 @@
+digraph {
+	node [shape=box]
+	layout=dot nodesep=0.3 overlaps=false rankdir=LR shape=box splines=polyline
+	1 [label="BT: Execution Tree" color=black fillcolor=lightyellow fontsize=11.733333333333336 height=0.3 shape=box style="rounded,filled" width=0.1]
+	1
+	2 [label="→: Task Plan Sequence" color=black fillcolor=lightpink fontsize=10.057142857142859 height=0.3 shape=box style="rounded,filled" width=0.1]
+	1 -> 2 [label="" color=black headport=w style="" tailport=e weight=1]
+	2
+	4 [label=<
+            <TABLE BORDER="0" COLOR='BLACK' CELLBORDER="1" CELLSPACING="0">
+              <TR><TD PORT="MAIN_2" WIDTH="116.16000000000003"  BGCOLOR="lightyellow"><FONT POINT-SIZE="11.115789473684211">BT: High Behavior A</FONT></TD></TR>
+            <TR ><TD PORT="xxx" BGCOLOR="white"><FONT POINT-SIZE="10.057142857142859"><FONT COLOR="cadetblue">flavor_switch_a_and_b</FONT></FONT></TD></TR>
+            </TABLE>
+            > color=ghostwhite fillcolor=white fontsize=9.0 height=0.36 shape=box style=filled width=1.8876000000000004]
+	2 -> 4 [label="" color=black headport=MAIN_2 style="" tailport=e weight=1]
+	4
+	5 [label="→" color=black fillcolor=lightpink fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.4]
+	4 -> 5 [label="" color=black headport=w style="" tailport=MAIN_2 weight=1]
+	5
+	6 [label="→: Auxiliar Parameter
+Sequence" color=black fillcolor=lightpink fontsize=10.057142857142859 height=0.3 shape=box style="rounded,filled" width=0.1]
+	5 -> 6 [label="" color=black headport=w style="" tailport=e weight=1]
+	6
+	7 [label=<
+            <TABLE BORDER="0" COLOR='BLACK' CELLBORDER="1" CELLSPACING="0">
+              <TR><TD PORT="MAIN_2" WIDTH="116.16000000000003"  BGCOLOR="darkseagreen"><FONT POINT-SIZE="12.0">Set Parameters</FONT></TD></TR>
+            <TR ><TD PORT="xxx" BGCOLOR="white"><FONT POINT-SIZE="10.560000000000002"><FONT COLOR="saddlebrown">generic_parameter</FONT>→10</FONT></TD></TR>
+            </TABLE>
+            > color=ghostwhite fillcolor=white fontsize=9.0 height=0.36 shape=box style=filled width=1.8876000000000004]
+	6 -> 7 [label="" color=black headport=MAIN_2 style="" tailport=e weight=1]
+	7
+	8 [label="→" color=black fillcolor=lightpink fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.4]
+	5 -> 8 [label="" color=black headport=w style="" tailport=e weight=1]
+	8
+	9 [label=<
+            <TABLE BORDER="0" COLOR='BLACK' CELLBORDER="1" CELLSPACING="0">
+              <TR><TD PORT="MAIN_2" WIDTH="116.16000000000003"  BGCOLOR="powderblue"><FONT POINT-SIZE="12.0">A: Primitive L</FONT></TD></TR>
+            <TR ><TD BGCOLOR="white"><FONT POINT-SIZE="12.0">robot=<FONT COLOR="red">robot1</FONT></FONT></TD></TR><TR ><TD BGCOLOR="white"><FONT POINT-SIZE="12.0">object=<FONT COLOR="darkturquoise">can1</FONT></FONT></TD></TR>
+            </TABLE>
+            > color=ghostwhite fillcolor=white fontsize=9.0 height=0.36 shape=box style=filled width=1.8876000000000004]
+	8 -> 9 [label="" color=black headport=MAIN_2 style="" tailport=e weight=1]
+	9
+	11 [label=<
+            <TABLE BORDER="0" COLOR='BLACK' CELLBORDER="1" CELLSPACING="0">
+              <TR><TD PORT="MAIN_2" WIDTH="116.16000000000003"  BGCOLOR="lightyellow"><FONT POINT-SIZE="12.0">BT: Behavior D</FONT></TD></TR>
+            <TR ><TD BGCOLOR="white"><FONT POINT-SIZE="12.0">robot=<FONT COLOR="red">robot1</FONT></FONT></TD></TR><TR ><TD BGCOLOR="white"><FONT POINT-SIZE="12.0">object=<FONT COLOR="darkturquoise">can1</FONT></FONT></TD></TR>
+            </TABLE>
+            > color=ghostwhite fillcolor=white fontsize=9.0 height=0.36 shape=box style=filled width=1.8876000000000004]
+	8 -> 11 [label="" color=black headport=MAIN_2 style="" tailport=e weight=1]
+	11
+	12 [label=<
+            <TABLE BORDER="0" COLOR='BLACK' CELLBORDER="1" CELLSPACING="0">
+              <TR><TD PORT="MAIN_2" WIDTH="116.16000000000003"  BGCOLOR="powderblue"><FONT POINT-SIZE="12.0">A: Primitive O</FONT></TD></TR>
+            <TR ><TD BGCOLOR="white"><FONT POINT-SIZE="12.0">robot=<FONT COLOR="red">robot1</FONT></FONT></TD></TR><TR ><TD BGCOLOR="white"><FONT POINT-SIZE="12.0">object=<FONT COLOR="darkorchid">{object}</FONT></FONT></TD></TR>
+            </TABLE>
+            > color=ghostwhite fillcolor=white fontsize=9.0 height=0.36 shape=box style=filled width=1.8876000000000004]
+	11 -> 12 [label="" color=black headport=MAIN_2 style="" tailport=MAIN_2 weight=1]
+	12
+	14 [label=<
+            <TABLE BORDER="0" COLOR='BLACK' CELLBORDER="1" CELLSPACING="0">
+              <TR><TD PORT="MAIN_2" WIDTH="116.16000000000003"  BGCOLOR="lightyellow"><FONT POINT-SIZE="12.0">BT: Behavior C</FONT></TD></TR>
+            <TR ><TD BGCOLOR="white"><FONT POINT-SIZE="12.0">robot=<FONT COLOR="red">robot1</FONT></FONT></TD></TR><TR ><TD BGCOLOR="white"><FONT POINT-SIZE="12.0">object=<FONT COLOR="darkturquoise">can1</FONT></FONT></TD></TR>
+            </TABLE>
+            > color=ghostwhite fillcolor=white fontsize=9.0 height=0.36 shape=box style=filled width=1.8876000000000004]
+	8 -> 14 [label="" color=black headport=MAIN_2 style="" tailport=e weight=1]
+	14
+	15 [label=<
+            <TABLE BORDER="0" COLOR='BLACK' CELLBORDER="1" CELLSPACING="0">
+              <TR><TD PORT="MAIN_2" WIDTH="116.16000000000003"  BGCOLOR="powderblue"><FONT POINT-SIZE="12.0">A: Primitive N</FONT></TD></TR>
+            <TR ><TD BGCOLOR="white"><FONT POINT-SIZE="12.0">robot=<FONT COLOR="red">robot1</FONT></FONT></TD></TR><TR ><TD BGCOLOR="white"><FONT POINT-SIZE="12.0">object=<FONT COLOR="darkorchid">{object}</FONT></FONT></TD></TR>
+            </TABLE>
+            > color=ghostwhite fillcolor=white fontsize=9.0 height=0.36 shape=box style=filled width=1.8876000000000004]
+	14 -> 15 [label="" color=black headport=MAIN_2 style="" tailport=MAIN_2 weight=1]
+	15
+	17 [label=<
+            <TABLE BORDER="0" COLOR='BLACK' CELLBORDER="1" CELLSPACING="0">
+              <TR><TD PORT="MAIN_2" WIDTH="116.16000000000003"  BGCOLOR="lightyellow"><FONT POINT-SIZE="12.0">BT: Behavior B</FONT></TD></TR>
+            <TR ><TD BGCOLOR="white"><FONT POINT-SIZE="12.0">robot=<FONT COLOR="red">robot1</FONT></FONT></TD></TR><TR ><TD BGCOLOR="white"><FONT POINT-SIZE="12.0">object=<FONT COLOR="darkturquoise">can1</FONT></FONT></TD></TR>
+            </TABLE>
+            > color=ghostwhite fillcolor=white fontsize=9.0 height=0.36 shape=box style=filled width=1.8876000000000004]
+	8 -> 17 [label="" color=black headport=MAIN_2 style="" tailport=e weight=1]
+	17
+	18 [label=<
+            <TABLE BORDER="0" COLOR='BLACK' CELLBORDER="1" CELLSPACING="0">
+              <TR><TD PORT="MAIN_2" WIDTH="116.16000000000003"  BGCOLOR="powderblue"><FONT POINT-SIZE="12.0">A: Primitive M</FONT></TD></TR>
+            <TR ><TD BGCOLOR="white"><FONT POINT-SIZE="12.0">robot=<FONT COLOR="red">robot1</FONT></FONT></TD></TR><TR ><TD BGCOLOR="white"><FONT POINT-SIZE="12.0">object=<FONT COLOR="darkorchid">{object}</FONT></FONT></TD></TR>
+            </TABLE>
+            > color=ghostwhite fillcolor=white fontsize=9.0 height=0.36 shape=box style=filled width=1.8876000000000004]
+	17 -> 18 [label="" color=black headport=MAIN_2 style="" tailport=MAIN_2 weight=1]
+	18
+	19 [label=<
+            <TABLE BORDER="0" COLOR='BLACK' CELLBORDER="1" CELLSPACING="0">
+              <TR><TD PORT="MAIN_2" WIDTH="116.16000000000003"  BGCOLOR="powderblue"><FONT POINT-SIZE="12.0">A: Primitive M</FONT></TD></TR>
+            <TR ><TD BGCOLOR="white"><FONT POINT-SIZE="12.0">robot=<FONT COLOR="red">robot1</FONT></FONT></TD></TR><TR ><TD BGCOLOR="white"><FONT POINT-SIZE="12.0">object=<FONT COLOR="darkorchid">{object}</FONT></FONT></TD></TR>
+            </TABLE>
+            > color=ghostwhite fillcolor=white fontsize=9.0 height=0.36 shape=box style=filled width=1.8876000000000004]
+	8 -> 19 [label="" color=black headport=MAIN_2 style="" tailport=e weight=1]
+	19
+	title [label=configured_tree_SwitchAandB fontsize=12 height=0.3 style=dashed]
+}

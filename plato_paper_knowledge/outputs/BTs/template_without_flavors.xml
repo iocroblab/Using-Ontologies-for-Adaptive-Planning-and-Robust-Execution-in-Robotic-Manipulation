@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<root BTCPP_format="4" main_tree_to_execute="ec_tree" time_of_generation="15:31:05">
+  <BehaviorTree ID="ec_tree">
+    <Sequence name="Main Sequence">
+      <SubTree ID="Execution Tree"/>
+    </Sequence>
+  </BehaviorTree>
+  <BehaviorTree ID="Execution Tree">
+    <Sequence name="Task Plan Sequence">
+      <SubTree ID="High Behavior Z_1" robot="robot1" manipulationobject="can1" input1="{input1}" output2="{output2}"/>
+    </Sequence>
+  </BehaviorTree>
+  <BehaviorTree ID="High Behavior Z_1">
+    <Seed ID="" v_edge="dashed" _s_robot="robot1" _s_manipulationobject="can1"/>
+    <Sequence>
+      <SubTree ID="Behavior A_1_1" robot="{robot}" object="{manipulationobject}"/>
+      <SubTree ID="Behavior B_1_2" robot="{robot}" object="{manipulationobject}"/>
+      <SubTree ID="Behavior C_1_3" robot="{robot}" object="{manipulationobject}"/>
+      <SubTree ID="Behavior D_1_4" robot="{robot}" object="{manipulationobject}"/>
+      <Action ID="Primitive M" robot="{robot}" object="{manipulationobject}" output="{output2}"/>
+    </Sequence>
+  </BehaviorTree>
+  <BehaviorTree ID="Behavior A_1_1">
+    <Seed ID="" v_edge="dashed" _s_robot="robot1" _s_manipulationobject="can1" _s_object="can1"/>
+    <Fallback>
+      <Action ID="Primitive O" robot="{robot}" object="{object}"/>
+      <Action ID="Primitive N" robot="{robot}" object="{object}"/>
+    </Fallback>
+  </BehaviorTree>
+  <BehaviorTree ID="Behavior B_1_2">
+    <Seed ID="" v_edge="dashed" _s_robot="robot1" _s_manipulationobject="can1" _s_object="can1"/>
+    <Sequence>
+      <Action ID="Primitive O" robot="{robot}" object="{object}"/>
+    </Sequence>
+  </BehaviorTree>
+  <BehaviorTree ID="Behavior C_1_3">
+    <Seed ID="" v_edge="dashed" _s_robot="robot1" _s_manipulationobject="can1" _s_object="can1"/>
+    <Sequence>
+      <Action ID="Primitive N" robot="{robot}" object="{object}"/>
+    </Sequence>
+  </BehaviorTree>
+  <BehaviorTree ID="Behavior D_1_4">
+    <Seed ID="" v_edge="dashed" _s_robot="robot1" _s_manipulationobject="can1" _s_object="can1"/>
+    <Sequence>
+      <Action ID="Primitive O" robot="{robot}" object="{object}"/>
+    </Sequence>
+  </BehaviorTree>
+  <!--15:31:05-->
+</root>

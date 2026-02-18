@@ -1,0 +1,388 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.semanticweb.org/oriol.ruiz/ontologies/2025/6/basic_ontology"
+         xmlns="http://www.semanticweb.org/oriol.ruiz/ontologies/2025/6/basic_ontology#"
+         xmlns:beaw="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#">
+
+<owl:Ontology rdf:about="http://www.semanticweb.org/oriol.ruiz/ontologies/2025/6/basic_ontology">
+  <owl:imports rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Basic testing knowledge ontology for BeAware Framework</rdfs:comment>
+</owl:Ontology>
+
+<owl:ObjectProperty rdf:about="#PDDLProperties">
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Parent property for all PDDL predicates</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#at_location">
+  <rdfs:subPropertyOf rdf:resource="#PDDLProperties"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PDDL predicate: robot is at a location</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasGenericObjProp"/>
+
+<owl:ObjectProperty rdf:about="#holding">
+  <rdfs:subPropertyOf rdf:resource="#PDDLProperties"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PDDL predicate: robot is holding an object</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#hasGenericDataProp"/>
+
+<owl:DatatypeProperty rdf:about="#special_object">
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Boolean flag to identify special objects for testing - set to true for can2, false for can1</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#test_mode">
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Boolean flag to enable flavor testing - set to true for robot2, false for robot1</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#test_mode_2">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#testing_mode_2">
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Boolean flag for secondary testing mode - set to true for can3</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:AnnotationProperty rdf:about="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#hasReplacementBehavior"/>
+
+<owl:Class rdf:about="#AddKinematicRestriction">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#FixParameter"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ManipulationObject">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#Object"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Robot">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#Object"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#b_behavior_a">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#Behavior"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#b_behavior_b">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#Behavior"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#b_behavior_c">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#Behavior"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#b_behavior_d">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#Behavior"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#b_condition_e">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#ConditionBehavior"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#b_condition_e_threshhold">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#ConditionBehavior"/>
+  <beaw:hasPort rdf:datatype="http://www.w3.org/2001/XMLSchema#string">threshhold::3.0</beaw:hasPort>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#b_condition_f">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#ConditionBehavior"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#b_condition_g">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#ConditionBehavior"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#b_high_behavior_w">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#HighLevelBehavior"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#b_high_behavior_x">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#HighLevelBehavior"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#b_high_behavior_y">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#HighLevelBehavior"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#b_high_behavior_z">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#HighLevelBehavior"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#b_recovery_h">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#RecoveryBehavior"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#b_recovery_i">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#RecoveryBehavior"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#b_recovery_j">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#RecoveryBehavior"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#can1">
+  <rdf:type rdf:resource="#ManipulationObject"/>
+  <hasGenericObjProp rdf:resource="#robot1"/>
+  <hasGenericDataProp rdf:datatype="http://www.w3.org/2001/XMLSchema#string">VALUE</hasGenericDataProp>
+  <special_object rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</special_object>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Standard object - special_object=false, flavors will NOT trigger in EC1</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#robot1">
+  <rdf:type rdf:resource="#Robot"/>
+  <test_mode rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</test_mode>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Standard robot - test_mode=false, flavors will NOT trigger in EC1</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#can2">
+  <rdf:type rdf:resource="#ManipulationObject"/>
+  <special_object rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</special_object>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Special test object - special_object=true, flavors WILL trigger in EC2</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#can3">
+  <rdf:type rdf:resource="#ManipulationObject"/>
+  <testing_mode_2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</testing_mode_2>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Special test object - testing_mode_2=true, mrs_flavor_11 WILL trigger</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#cm_context_mode_alpha">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#ContextMode"/>
+  <beaw:incompatibleWith rdf:resource="#cm_context_mode_beta"/>
+  <beaw:isContextModeOf rdf:resource="#b_high_behavior_y"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#cm_context_mode_beta">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#ContextMode"/>
+  <beaw:isContextModeOf rdf:resource="#b_high_behavior_y"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#cm_context_mode_gamma">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#ContextMode"/>
+  <beaw:isContextModeOf rdf:resource="#b_high_behavior_y"/>
+  <beaw:hasContextTrigger rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FORCETRUE</beaw:hasContextTrigger>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#flavor_1_delete_m">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#Flavor"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#Ignore"/>
+  <beaw:hasTargetBehavior rdf:resource="#p_primitive_m"/>
+  <beaw:isFlavorOf rdf:resource="#b_high_behavior_x"/>
+  <beaw:hasTrigger rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASK WHERE { &lt;manipulationobject&gt; rdf:type onto:ManipulationObject . &lt;manipulationobject&gt; onto:special_object true }</beaw:hasTrigger>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Deletes/ignores Primitive M when object has special_object=true (can2 only, not can1)</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#p_primitive_m">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#Primitive"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#flavor_2_switch_b_c">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#Flavor"/>
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#SwitchAandB"/>
+  <beaw:hasTargetBehaviorA rdf:resource="#b_behavior_b"/>
+  <beaw:hasTargetBehaviorB rdf:resource="#b_behavior_c"/>
+  <beaw:isFlavorOf rdf:resource="#b_high_behavior_x"/>
+  <beaw:hasTrigger rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASK WHERE { &lt;robot&gt; rdf:type onto:Robot . &lt;robot&gt; onto:test_mode true }</beaw:hasTrigger>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Replaces Behavior B with Behavior C when robot has test_mode=true (robot2 only, not robot1)</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#flavor_3_delete_a_in_cm_alpha">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#Ignore"/>
+  <beaw:hasTargetBehavior rdf:resource="#b_behavior_a"/>
+  <beaw:isFlavorInMode rdf:resource="#cm_context_mode_alpha"/>
+  <beaw:isFlavorOf rdf:resource="#b_high_behavior_y"/>
+  <beaw:hasTrigger rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EXPANSION</beaw:hasTrigger>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#flavor_4_replace_m_by_parameter_when_can1">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#ReplaceByParam"/>
+  <beaw:hasTargetBehavior rdf:resource="#p_primitive_m"/>
+  <beaw:isFlavorInMode rdf:resource="#cm_context_mode_alpha"/>
+  <beaw:isFlavorOf rdf:resource="#b_high_behavior_y"/>
+  <beaw:hasTrigger rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASK WHERE { &lt;manipulationobject&gt; rdf:type onto:ManipulationObject . &lt;manipulationobject&gt; onto:special_object true }</beaw:hasTrigger>
+  <beaw:obtainsParamValuewithQuery rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SELECT#s("hello"#sAS#s?greeting)#sWHERE#s{}</beaw:obtainsParamValuewithQuery>
+  <beaw:replacedByParam rdf:datatype="http://www.w3.org/2001/XMLSchema#string">replacement_parameter</beaw:replacedByParam>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#flavor_5_delete_l_in_cm_gamma">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#Ignore"/>
+  <beaw:hasTargetBehavior rdf:resource="#p_primitive_l"/>
+  <beaw:isFlavorInMode rdf:resource="#cm_context_mode_gamma"/>
+  <beaw:isFlavorOf rdf:resource="#b_high_behavior_y"/>
+  <beaw:hasTrigger rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FORCETRUE</beaw:hasTrigger>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#p_primitive_l">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#Primitive"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#mrs_flavor_10_actionrecovery_m_i_terminal">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#AhasRecovery"/>
+  <beaw:hasRecoveryBlock rdf:resource="#b_recovery_i"/>
+  <beaw:hasTargetBehavior rdf:resource="#p_primitive_m"/>
+  <beaw:hasTrigger rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASK WHERE { &lt;robot&gt; rdf:type onto:Robot . &lt;robot&gt; onto:test_mode true }</beaw:hasTrigger>
+  <beaw:isTerminal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</beaw:isTerminal>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#mrs_flavor_11_precondition_e_threshhold_h_can3">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#AhasPreCondition"/>
+  <beaw:hasConditionBlock rdf:resource="#b_condition_e_threshhold"/>
+  <beaw:hasRecoveryBlock rdf:resource="#b_recovery_h"/>
+  <beaw:hasTargetBehavior rdf:resource="#b_behavior_a"/>
+  <beaw:hasTrigger rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASK WHERE { &lt;manipulationobject&gt; rdf:type onto:ManipulationObject . &lt;manipulationobject&gt; onto:testing_mode_2 true }</beaw:hasTrigger>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Copy of mrs_flavor_1 that triggers when manipulationobject has testing_mode_2=true (can3 only)</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#mrs_flavor_12_precondition_e_h_can3">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#AhasPreCondition"/>
+  <beaw:hasConditionBlock rdf:resource="#b_condition_e"/>
+  <beaw:hasRecoveryBlock rdf:resource="#b_recovery_i"/>
+  <beaw:hasTargetBehavior rdf:resource="#b_behavior_a"/>
+  <beaw:isMRSFlavorOf rdf:resource="#b_high_behavior_z"/>
+  <beaw:hasTrigger rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASK WHERE { &lt;manipulationobject&gt; rdf:type onto:ManipulationObject . &lt;manipulationobject&gt; onto:testing_mode_2 true }</beaw:hasTrigger>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#mrs_flavor_1_precondition_e_h">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#AhasPreCondition"/>
+  <beaw:hasConditionBlock rdf:resource="#b_condition_e"/>
+  <beaw:hasRecoveryBlock rdf:resource="#b_recovery_h"/>
+  <beaw:hasTargetBehavior rdf:resource="#b_behavior_a"/>
+  <beaw:isMRSFlavorOf rdf:resource="#b_high_behavior_z"/>
+  <beaw:hasTrigger rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASK WHERE { &lt;manipulationobject&gt; rdf:type onto:ManipulationObject . &lt;manipulationobject&gt; onto:special_object true }</beaw:hasTrigger>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#mrs_flavor_1_precondition_e_h_2">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#AhasPreCondition"/>
+  <beaw:hasConditionBlock rdf:resource="#b_condition_e"/>
+  <beaw:hasRecoveryBlock rdf:resource="#b_recovery_h"/>
+  <beaw:hasTargetBehavior rdf:resource="#b_behavior_a"/>
+  <beaw:isMRSFlavorOf rdf:resource="#b_high_behavior_z"/>
+  <beaw:hasTrigger rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASK WHERE { &lt;robot&gt; rdf:type onto:Robot . &lt;robot&gt; onto:test_mode true }</beaw:hasTrigger>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#mrs_flavor_2_holdcondition_f_i">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#AhasHoldCondition"/>
+  <beaw:hasConditionBlock rdf:resource="#b_condition_f"/>
+  <beaw:hasRecoveryBlock rdf:resource="#b_recovery_i"/>
+  <beaw:hasTargetBehavior rdf:resource="#b_behavior_b"/>
+  <beaw:isMRSFlavorOf rdf:resource="#b_high_behavior_z"/>
+  <beaw:hasTrigger rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASK WHERE { &lt;manipulationobject&gt; rdf:type onto:ManipulationObject . &lt;manipulationobject&gt; onto:special_object true }</beaw:hasTrigger>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#mrs_flavor_2_holdcondition_f_i_2">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#AhasHoldCondition"/>
+  <beaw:hasConditionBlock rdf:resource="#b_condition_f"/>
+  <beaw:hasRecoveryBlock rdf:resource="#b_recovery_i"/>
+  <beaw:hasTargetBehavior rdf:resource="#b_behavior_a"/>
+  <beaw:isMRSFlavorOf rdf:resource="#b_high_behavior_z"/>
+  <beaw:hasTrigger rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASK WHERE { &lt;robot&gt; rdf:type onto:Robot . &lt;robot&gt; onto:test_mode true }</beaw:hasTrigger>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#mrs_flavor_3_postcondition_g_j">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#AhasPostCondition"/>
+  <beaw:hasConditionBlock rdf:resource="#b_condition_g"/>
+  <beaw:hasRecoveryBlock rdf:resource="#b_recovery_j"/>
+  <beaw:hasTargetBehavior rdf:resource="#b_behavior_c"/>
+  <beaw:isMRSFlavorOf rdf:resource="#b_high_behavior_z"/>
+  <beaw:hasTrigger rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASK WHERE { &lt;manipulationobject&gt; rdf:type onto:ManipulationObject . &lt;manipulationobject&gt; onto:special_object true }</beaw:hasTrigger>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#mrs_flavor_3_postcondition_g_j_2">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#AhasPostCondition"/>
+  <beaw:hasConditionBlock rdf:resource="#b_condition_g"/>
+  <beaw:hasRecoveryBlock rdf:resource="#b_recovery_j"/>
+  <beaw:hasTargetBehavior rdf:resource="#b_behavior_a"/>
+  <beaw:isMRSFlavorOf rdf:resource="#b_high_behavior_z"/>
+  <beaw:hasTrigger rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASK WHERE { &lt;robot&gt; rdf:type onto:Robot . &lt;robot&gt; onto:test_mode true }</beaw:hasTrigger>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#mrs_flavor_4_retriable_d_h">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#AisRetriable"/>
+  <beaw:hasRecoveryBlock rdf:resource="#b_recovery_h"/>
+  <beaw:hasTargetBehavior rdf:resource="#b_behavior_d"/>
+  <beaw:isMRSFlavorOf rdf:resource="#b_high_behavior_z"/>
+  <beaw:hasTrigger rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASK WHERE { &lt;manipulationobject&gt; rdf:type onto:ManipulationObject . &lt;manipulationobject&gt; onto:special_object true }</beaw:hasTrigger>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#mrs_flavor_4_retriable_d_h_2">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#AisRetriable"/>
+  <beaw:hasRecoveryBlock rdf:resource="#b_recovery_h"/>
+  <beaw:hasTargetBehavior rdf:resource="#b_behavior_a"/>
+  <beaw:isMRSFlavorOf rdf:resource="#b_high_behavior_z"/>
+  <beaw:hasTrigger rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASK WHERE { &lt;robot&gt; rdf:type onto:Robot . &lt;robot&gt; onto:test_mode true }</beaw:hasTrigger>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#mrs_flavor_5_actionrecovery_m_i">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#AhasRecovery"/>
+  <beaw:hasRecoveryBlock rdf:resource="#b_recovery_i"/>
+  <beaw:hasTargetBehavior rdf:resource="#p_primitive_m"/>
+  <beaw:isMRSFlavorOf rdf:resource="#b_high_behavior_z"/>
+  <beaw:hasTrigger rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASK WHERE { &lt;manipulationobject&gt; rdf:type onto:ManipulationObject . &lt;manipulationobject&gt; onto:special_object true }</beaw:hasTrigger>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#mrs_flavor_5_actionrecovery_m_i_2">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#AhasRecovery"/>
+  <beaw:hasRecoveryBlock rdf:resource="#b_recovery_i"/>
+  <beaw:hasTargetBehavior rdf:resource="#b_behavior_a"/>
+  <beaw:isMRSFlavorOf rdf:resource="#b_high_behavior_z"/>
+  <beaw:hasTrigger rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASK WHERE { &lt;robot&gt; rdf:type onto:Robot . &lt;robot&gt; onto:test_mode true }</beaw:hasTrigger>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#mrs_flavor_6_precondition_e_h_terminal">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#AhasPreCondition"/>
+  <beaw:hasConditionBlock rdf:resource="#b_condition_e"/>
+  <beaw:hasRecoveryBlock rdf:resource="#b_recovery_h"/>
+  <beaw:hasTargetBehavior rdf:resource="#b_behavior_a"/>
+  <beaw:hasTrigger rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASK WHERE { &lt;robot&gt; rdf:type onto:Robot . &lt;robot&gt; onto:test_mode true }</beaw:hasTrigger>
+  <beaw:isTerminal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</beaw:isTerminal>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#mrs_flavor_7_holdcondition_f_i_terminal">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#AhasHoldCondition"/>
+  <beaw:hasConditionBlock rdf:resource="#b_condition_f"/>
+  <beaw:hasTargetBehavior rdf:resource="#b_behavior_b"/>
+  <beaw:hasTrigger rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASK WHERE { &lt;robot&gt; rdf:type onto:Robot . &lt;robot&gt; onto:test_mode true }</beaw:hasTrigger>
+  <beaw:isTerminal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</beaw:isTerminal>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#mrs_flavor_8_postcondition_g_j_terminal">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#AhasPostCondition"/>
+  <beaw:hasConditionBlock rdf:resource="#b_condition_g"/>
+  <beaw:hasRecoveryBlock rdf:resource="#b_recovery_j"/>
+  <beaw:hasTargetBehavior rdf:resource="#b_behavior_c"/>
+  <beaw:hasTrigger rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASK WHERE { &lt;robot&gt; rdf:type onto:Robot . &lt;robot&gt; onto:test_mode true }</beaw:hasTrigger>
+  <beaw:isTerminal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</beaw:isTerminal>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#mrs_flavor_9_retriable_d_h_terminal">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#AisRetriable"/>
+  <beaw:hasRecoveryBlock rdf:resource="#b_recovery_h"/>
+  <beaw:hasTargetBehavior rdf:resource="#b_behavior_d"/>
+  <beaw:hasTrigger rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASK WHERE { &lt;robot&gt; rdf:type onto:Robot . &lt;robot&gt; onto:test_mode true }</beaw:hasTrigger>
+  <beaw:isTerminal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</beaw:isTerminal>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#p_primitive_n">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#Primitive"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#p_primitive_o">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#Primitive"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#p_primitive_o_threshhold">
+  <rdf:type rdf:resource="http://www.semanticweb.org/oriol.ruiz/ontologies/2023/8/beaware_ontology#Primitive"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#robot2">
+  <rdf:type rdf:resource="#Robot"/>
+  <test_mode rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</test_mode>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Test robot - test_mode=true, terminal MRS flavors WILL trigger in EC6</rdfs:comment>
+</owl:NamedIndividual>
+
+
+</rdf:RDF>

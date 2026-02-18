@@ -1,0 +1,85 @@
+# Plato paper knowledge
+
+# Path to the folder containing knowledge resources
+knowledge_folder_path: "/home/users/oriol.ruiz/colconws_development/src/beaware_framework/knowledge/plato_paper_knowledge/"
+
+# Name of the ontology file
+application_ontology_file_name: "plato_paper_ontology.owl"
+
+# Name of the domain file
+domain_file_name: "basic_domain.pddl"
+
+# Name of the templates file
+bt_templates_file_name: "plato_templates.xml"
+
+debug: 1
+
+loading_options:
+  build_ontology_options:
+    force_ontology_match: True  # All primitives must be in ontology
+    build_ontology_file_name: "AUTO_built_ontology.owl"
+    replace_original_file: False
+  build_template_options:
+    build_templates_file_name: "build_basic_templates.xml"
+
+expand_knowledge_options:
+  load_flavors_yaml_paths: []
+  load_action_modes_from_yaml_paths: []
+
+execution_configuration_options:
+  - output_bt_name: template_without_flavors 
+    task_plan:
+      - "high_behavior_z robot1 can1"
+    visualization_options:
+      title: "No Flavors activate"
+      format: png
+      rankdir: TB
+      filter_tags: ["SetBlackboard","Seed","Script","ForceFailure"]
+      split_parameters: False
+      alternative_dictionary: {"Behavior A_1_1": "Behavior A", "Behavior B_1_2": "Behavior B", "Behavior C_1_3": "Behavior C", "Behavior D_1_4": "Behavior D", "High Behavior Z_1": "High Behavior Z", "_1_10":"","_1_11":"","_1_12":"","_1_13":"","_1_14":"","_1_15":"","_1_16":"","_1_1":"","_1_2":"","_1_3":"","_1_4":"","_1_5":"","_1_6":"","_1_7":"","_1_8":"","_1_9":"","of Behavior A":"","of Behavior B":"","of Behavior C":"","of Behavior D":""," Behavior A":""," Behavior B":""," Behavior C":""," Behavior D":"", "of Primitive M":""," Primitive M":"", "MAIN MRS":"MRS","Retry Fallback":"MRS"}
+      timestamp_in_title: False
+      trees_to_visualize: ["High Behavior Z"]
+      hide_short_tags: ["BehaviorTree","Action","SubTree"]
+      dont_expand_ids: ["Condition E", "Condition F", "Condition G", "Recovery H", "Recovery I", "Recovery J", "Behavior A", "Behavior B", "Behavior C", "Behavior D"] 
+      id_filter: ["PrintMsg","PrintInt"]
+      treat_name_as_ID: True
+  
+      
+  
+  - output_bt_name: template_with_individual_mrs
+    task_plan:
+      - "high_behavior_z robot1 can2"
+    visualization_options:
+      title: "Each Behavior has its own MRS activated"
+      format: png
+      rankdir: TB
+      filter_tags: ["SetBlackboard","Seed","Script","ForceFailure"]
+      split_parameters: False
+      alternative_dictionary: {"Behavior A_1_1": "Behavior A", "Behavior B_1_2": "Behavior B", "Behavior C_1_3": "Behavior C", "Behavior D_1_4": "Behavior D", "High Behavior Z_1": "High Behavior Z", "_1_10":"","_1_11":"","_1_12":"","_1_13":"","_1_14":"","_1_15":"","_1_16":"","_1_1":"","_1_2":"","_1_3":"","_1_4":"","_1_5":"","_1_6":"","_1_7":"","_1_8":"","_1_9":"","of Behavior A":"","of Behavior B":"","of Behavior C":"","of Behavior D":""," Behavior A":""," Behavior B":""," Behavior C":""," Behavior D":"", "of Primitive M":""," Primitive M":"", "MAIN MRS":"MRS","Retry Fallback":"MRS"}
+      timestamp_in_title: False
+      trees_to_visualize: ["High Behavior Z"]
+      hide_short_tags: ["BehaviorTree","Action","SubTree"]
+      dont_expand_ids: ["Condition E", "Condition F", "Condition G", "Recovery H", "Recovery I", "Recovery J", "Behavior A", "Behavior B", "Behavior C", "Behavior D"] 
+      id_filter: ["PrintMsg","PrintInt"]
+      treat_name_as_ID: True
+  
+
+  - output_bt_name: template_with_combined_mrs 
+    task_plan:
+      - "high_behavior_z robot2 can1"
+
+
+    visualization_options:
+      title: "A combined MRS with multiple flavors applied to a single behavior"
+      format: png
+      rankdir: TB
+      filter_tags: ["SetBlackboard","Seed","Script","ForceFailure"]
+      split_parameters: False
+      alternative_dictionary: {"Behavior A_1_1": "Behavior A", "Behavior B_1_2": "Behavior B", "Behavior C_1_3": "Behavior C", "Behavior D_1_4": "Behavior D", "High Behavior Z_1": "High Behavior Z", "_1_10":"","_1_11":"","_1_12":"","_1_13":"","_1_14":"","_1_15":"","_1_16":"","_1_1":"","_1_2":"","_1_3":"","_1_4":"","_1_5":"","_1_6":"","_1_7":"","_1_8":"","_1_9":"","of Behavior A":"","of Behavior B":"","of Behavior C":"","of Behavior D":""," Behavior A":""," Behavior B":""," Behavior C":""," Behavior D":"", "of Primitive M":""," Primitive M":"", "MAIN MRS":"MRS","Retry Fallback":"MRS"}
+      timestamp_in_title: False
+      trees_to_visualize: ["High Behavior Z"]
+      hide_short_tags: ["BehaviorTree","Action","SubTree"]
+      dont_expand_ids: ["Condition E", "Condition F", "Condition G", "Recovery H", "Recovery I", "Recovery J", "Behavior A", "Behavior B", "Behavior C", "Behavior D"] 
+      id_filter: ["PrintMsg","PrintInt"]
+      treat_name_as_ID: True
+  

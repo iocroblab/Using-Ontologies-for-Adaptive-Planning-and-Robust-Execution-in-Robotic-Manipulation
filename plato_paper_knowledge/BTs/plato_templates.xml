@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<root main_tree_to_execute="High Behavior X">
+
+
+    <BehaviorTree ID="High Behavior X" _pddl_parameters="robot;manipulationobject" _inputs="input1"
+        _outputs="output2">
+        <Sequence>
+            <Sequence name="Setup Parameters">
+                <SetBlackboard output_key="generic_parameter" value="10" />
+            </Sequence>
+            <Sequence name="Execution">
+                <SubTree ID="Behavior A" robot="{robot}" object="{manipulationobject}" />
+                <SubTree ID="Behavior B" robot="{robot}" object="{manipulationobject}" />
+                <SubTree ID="Behavior C" robot="{robot}" object="{manipulationobject}" />
+                <SubTree ID="Behavior D" robot="{robot}" object="{manipulationobject}" />
+
+            </Sequence>
+        </Sequence>
+    </BehaviorTree>
+
+
+    <BehaviorTree ID="High Behavior Y" _pddl_parameters="rob1;rob2;manipulationobject"
+        _inputs="input1"
+        _outputs="output2">
+        <Sequence>
+            <Sequence name="Setup Parameters">
+                <SetBlackboard output_key="generic_parameter" value="10" />
+            </Sequence>
+            <Sequence name="Execution">
+                <Action ID="Primitive L" input="{input1}" />
+                <SubTree ID="Behavior A" robot="{rob1}" object="{manipulationobject}" />
+                <SubTree ID="Behavior D" robot="{rob2}" object="{manipulationobject}" />
+                <Action ID="Primitive M" robot="{robot}" object="{manipulationobject}"
+                    output="{output2}" />
+            </Sequence>
+        </Sequence>
+    </BehaviorTree>
+
+
+    <BehaviorTree ID="High Behavior Z" _pddl_parameters="robot;manipulationobject" _inputs="input1"
+        _outputs="output2">
+        <Sequence>
+
+            <SubTree ID="Behavior A" robot="{robot}" object="{manipulationobject}" />
+            <SubTree ID="Behavior B" robot="{robot}" object="{manipulationobject}" />
+            <SubTree ID="Behavior C" robot="{robot}" object="{manipulationobject}" />
+            <SubTree ID="Behavior D" robot="{robot}" object="{manipulationobject}" />
+            <Action ID="Primitive M" robot="{robot}" object="{manipulationobject}"
+                output="{output2}" />
+
+        </Sequence>
+
+    </BehaviorTree>
+
+
+    <!-- SUBTREE: Behavior A - Uses _inputs and _outputs (NOT _pddl_parameters) - Generic
+    subbehavior that can be reused -->
+    <BehaviorTree ID="Behavior A" _inputs="robot;object" _outputs="robot;object">
+        <Fallback>
+            <Action ID="Primitive O" robot="{robot}" object="{object}" />
+            <Action ID="Primitive N" robot="{robot}" object="{object}" />
+        </Fallback>
+    </BehaviorTree>
+
+
+    <!-- SUBTREE: Behavior B - Uses _inputs and _outputs (NOT _pddl_parameters) - Generic
+    subbehavior that can be reused -->
+    <BehaviorTree ID="Behavior B" _inputs="robot;object" _outputs="robot;object">
+        <Sequence>
+            <Action ID="Primitive O" robot="{robot}" object="{object}" />
+        </Sequence>
+    </BehaviorTree>
+
+    <!-- SUBTREE: Behavior C - Alternative to Behavior B (used by flavor_switch_b_c) -->
+    <BehaviorTree ID="Behavior C" _inputs="robot;object" _outputs="robot;object">
+        <Sequence>
+            <Action ID="Primitive N" robot="{robot}" object="{object}" />
+        </Sequence>
+    </BehaviorTree>
+
+    <!-- SUBTREE: Behavior D - Additional test behavior -->
+    <BehaviorTree ID="Behavior D" _inputs="robot;object" _outputs="robot;object">
+        <Sequence>
+            <Action ID="Primitive O" robot="{robot}" object="{object}" />
+        </Sequence>
+    </BehaviorTree>
+
+
+    <!-- CONDITIONS -->
+    <!-- SUBTREE: Behavior E - Additional test behavior -->
+
+    <BehaviorTree ID="Condition E" _inputs="robot" _outputs="test_result_e">
+        <Sequence>
+            <Action ID="Primitive O" robot="{robot}" object="xxx" />
+
+        </Sequence>
+    </BehaviorTree>
+
+    <BehaviorTree ID="Condition E Threshhold" _inputs="robot;threshhold" _outputs="test_result_e2">
+        <Sequence>
+            <Action ID="Primitive O Threshhold" robot="{robot}" object="xxx"
+                threshhold="{threshhold}" />
+        </Sequence>
+    </BehaviorTree>
+
+
+    <BehaviorTree ID="Condition F" _inputs="object" _outputs="test_result_f">
+        <Sequence>
+            <Action ID="Primitive O" robot="xxx" object="{object}" />
+
+        </Sequence>
+    </BehaviorTree>
+
+
+    <BehaviorTree ID="Condition G" _inputs="robot;object" _outputs="test_result_g">
+        <Sequence>
+            <Action ID="Primitive O" robot="{robot}" object="{object}" />
+
+        </Sequence>
+    </BehaviorTree>
+
+
+    <BehaviorTree ID="Recovery H" _inputs="robot" _outputs="test_result_h">
+        <Sequence>
+            <Action ID="Primitive O" robot="{robot}" object="xxx" />
+
+        </Sequence>
+    </BehaviorTree>
+
+    <BehaviorTree ID="Recovery I" _inputs="object" _outputs="test_result_i">
+        <Sequence>
+            <Action ID="Primitive O" robot="xxx" object="{object}" />
+
+        </Sequence>
+    </BehaviorTree>
+
+    <BehaviorTree ID="Recovery J" _inputs="robot;object" _outputs="test_result_j">
+        <Sequence>
+            <Action ID="Primitive O" robot="{robot}" object="{object}" />
+
+        </Sequence>
+    </BehaviorTree>
+</root>

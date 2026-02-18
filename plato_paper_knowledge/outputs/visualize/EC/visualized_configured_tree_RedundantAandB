@@ -1,0 +1,80 @@
+digraph {
+	node [shape=box]
+	layout=dot nodesep=0.3 overlaps=false rankdir=LR shape=box splines=polyline
+	1 [label="BT: Execution Tree" color=black fillcolor=lightyellow fontsize=11.733333333333336 height=0.3 shape=box style="rounded,filled" width=0.1]
+	1
+	2 [label="→: Task Plan Sequence" color=black fillcolor=lightpink fontsize=10.057142857142859 height=0.3 shape=box style="rounded,filled" width=0.1]
+	1 -> 2 [label="" color=black headport=w style="" tailport=e weight=1]
+	2
+	4 [label=<
+            <TABLE BORDER="0" COLOR='BLACK' CELLBORDER="1" CELLSPACING="0">
+              <TR><TD PORT="MAIN_2" WIDTH="116.16000000000003"  BGCOLOR="lightyellow"><FONT POINT-SIZE="11.115789473684211">BT: High Behavior A</FONT></TD></TR>
+            <TR ><TD PORT="xxx" BGCOLOR="white"><FONT POINT-SIZE="10.057142857142859"><FONT COLOR="cadetblue">flavor_test_redundant</FONT></FONT></TD></TR>
+            </TABLE>
+            > color=ghostwhite fillcolor=white fontsize=9.0 height=0.36 shape=box style=filled width=1.8876000000000004]
+	2 -> 4 [label="" color=black headport=MAIN_2 style="" tailport=e weight=1]
+	4
+	5 [label="→" color=black fillcolor=lightpink fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.4]
+	4 -> 5 [label="" color=black headport=w style="" tailport=MAIN_2 weight=1]
+	5
+	6 [label=<
+            <TABLE BORDER="0" COLOR='BLACK' CELLBORDER="1" CELLSPACING="0">
+              <TR><TD PORT="MAIN_2" WIDTH="116.16000000000003"  BGCOLOR="powderblue"><FONT POINT-SIZE="12.0">A: Primitive L</FONT></TD></TR>
+            <TR ><TD BGCOLOR="white"><FONT POINT-SIZE="12.0">robot=<FONT COLOR="mediumorchid">robot1</FONT></FONT></TD></TR><TR ><TD BGCOLOR="white"><FONT POINT-SIZE="12.0">object=<FONT COLOR="darkorchid">can1</FONT></FONT></TD></TR>
+            </TABLE>
+            > color=ghostwhite fillcolor=white fontsize=9.0 height=0.36 shape=box style=filled width=1.8876000000000004]
+	5 -> 6 [label="" color=black headport=MAIN_2 style="" tailport=e weight=1]
+	6
+	7 [label="?: Redundant Fallback" color=black fillcolor=lightcyan fontsize=10.057142857142859 height=0.3 shape=box style="rounded,filled" width=0.1]
+	5 -> 7 [label="" color=black headport=w style="" tailport=e weight=1]
+	7
+	9 [label=<
+            <TABLE BORDER="0" COLOR='BLACK' CELLBORDER="1" CELLSPACING="0">
+              <TR><TD PORT="MAIN_2" WIDTH="116.16000000000003"  BGCOLOR="lightyellow"><FONT POINT-SIZE="12.0">BT: Behavior B</FONT></TD></TR>
+            <TR ><TD BGCOLOR="white"><FONT POINT-SIZE="12.0">robot=<FONT COLOR="mediumorchid">robot1</FONT></FONT></TD></TR><TR ><TD BGCOLOR="white"><FONT POINT-SIZE="12.0">object=<FONT COLOR="darkorchid">can1</FONT></FONT></TD></TR>
+            </TABLE>
+            > color=ghostwhite fillcolor=white fontsize=9.0 height=0.36 shape=box style=filled width=1.8876000000000004]
+	7 -> 9 [label="" color=black headport=MAIN_2 style="" tailport=e weight=1]
+	9
+	10 [label=<
+            <TABLE BORDER="0" COLOR='BLACK' CELLBORDER="1" CELLSPACING="0">
+              <TR><TD PORT="MAIN_2" WIDTH="116.16000000000003"  BGCOLOR="powderblue"><FONT POINT-SIZE="12.0">A: Primitive M</FONT></TD></TR>
+            <TR ><TD BGCOLOR="white"><FONT POINT-SIZE="12.0">robot=<FONT COLOR="mediumorchid">robot1</FONT></FONT></TD></TR><TR ><TD BGCOLOR="white"><FONT POINT-SIZE="12.0">object=<FONT COLOR="red">{object}</FONT></FONT></TD></TR>
+            </TABLE>
+            > color=ghostwhite fillcolor=white fontsize=9.0 height=0.36 shape=box style=filled width=1.8876000000000004]
+	9 -> 10 [label="" color=black headport=MAIN_2 style="" tailport=MAIN_2 weight=1]
+	10
+	12 [label=<
+            <TABLE BORDER="0" COLOR='BLACK' CELLBORDER="1" CELLSPACING="0">
+              <TR><TD PORT="MAIN_2" WIDTH="116.16000000000003"  BGCOLOR="lightyellow"><FONT POINT-SIZE="12.0">BT: Behavior C</FONT></TD></TR>
+            <TR ><TD BGCOLOR="white"><FONT POINT-SIZE="12.0">robot=<FONT COLOR="mediumorchid">robot1</FONT></FONT></TD></TR><TR ><TD BGCOLOR="white"><FONT POINT-SIZE="12.0">object=<FONT COLOR="darkorchid">can1</FONT></FONT></TD></TR>
+            </TABLE>
+            > color=ghostwhite fillcolor=white fontsize=9.0 height=0.36 shape=box style=filled width=1.8876000000000004]
+	7 -> 12 [label="" color=black headport=MAIN_2 style="" tailport=e weight=1]
+	12
+	13 [label=<
+            <TABLE BORDER="0" COLOR='BLACK' CELLBORDER="1" CELLSPACING="0">
+              <TR><TD PORT="MAIN_2" WIDTH="116.16000000000003"  BGCOLOR="powderblue"><FONT POINT-SIZE="12.0">A: Primitive N</FONT></TD></TR>
+            <TR ><TD BGCOLOR="white"><FONT POINT-SIZE="12.0">robot=<FONT COLOR="mediumorchid">robot1</FONT></FONT></TD></TR><TR ><TD BGCOLOR="white"><FONT POINT-SIZE="12.0">object=<FONT COLOR="red">{object}</FONT></FONT></TD></TR>
+            </TABLE>
+            > color=ghostwhite fillcolor=white fontsize=9.0 height=0.36 shape=box style=filled width=1.8876000000000004]
+	12 -> 13 [label="" color=black headport=MAIN_2 style="" tailport=MAIN_2 weight=1]
+	13
+	15 [label=<
+            <TABLE BORDER="0" COLOR='BLACK' CELLBORDER="1" CELLSPACING="0">
+              <TR><TD PORT="MAIN_2" WIDTH="116.16000000000003"  BGCOLOR="lightyellow"><FONT POINT-SIZE="12.0">BT: Behavior D</FONT></TD></TR>
+            <TR ><TD BGCOLOR="white"><FONT POINT-SIZE="12.0">robot=<FONT COLOR="mediumorchid">robot1</FONT></FONT></TD></TR><TR ><TD BGCOLOR="white"><FONT POINT-SIZE="12.0">object=<FONT COLOR="darkorchid">can1</FONT></FONT></TD></TR>
+            </TABLE>
+            > color=ghostwhite fillcolor=white fontsize=9.0 height=0.36 shape=box style=filled width=1.8876000000000004]
+	5 -> 15 [label="" color=black headport=MAIN_2 style="" tailport=e weight=1]
+	15
+	16 [label=<
+            <TABLE BORDER="0" COLOR='BLACK' CELLBORDER="1" CELLSPACING="0">
+              <TR><TD PORT="MAIN_2" WIDTH="116.16000000000003"  BGCOLOR="powderblue"><FONT POINT-SIZE="12.0">A: Primitive O</FONT></TD></TR>
+            <TR ><TD BGCOLOR="white"><FONT POINT-SIZE="12.0">robot=<FONT COLOR="mediumorchid">robot1</FONT></FONT></TD></TR><TR ><TD BGCOLOR="white"><FONT POINT-SIZE="12.0">object=<FONT COLOR="red">{object}</FONT></FONT></TD></TR>
+            </TABLE>
+            > color=ghostwhite fillcolor=white fontsize=9.0 height=0.36 shape=box style=filled width=1.8876000000000004]
+	15 -> 16 [label="" color=black headport=MAIN_2 style="" tailport=MAIN_2 weight=1]
+	16
+	title [label=configured_tree_RedundantAandB fontsize=12 height=0.3 style=dashed]
+}

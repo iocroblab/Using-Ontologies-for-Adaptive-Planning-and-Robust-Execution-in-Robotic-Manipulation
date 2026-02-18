@@ -1,0 +1,112 @@
+digraph {
+	node [shape=box]
+	layout=dot nodesep=0.3 overlaps=false rankdir=TB shape=box splines=polyline
+	1 [label="High Behavior Z" color=black fillcolor=lightyellow fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	1
+	2 [label="→" color=black fillcolor=lightpink fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.4]
+	1 -> 2 [label="" color=black headport=n style="" tailport=s weight=1]
+	2
+	3 [label="→: MRS " color=black fillcolor=lightpink fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	2 -> 3 [label="" color=black headport=n style="" tailport=s weight=1]
+	3
+	4 [label="?: PRC MRS " color=black fillcolor=lightcyan fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	3 -> 4 [label="" color=black headport=n style="" tailport=s weight=1]
+	4
+	5 [label="→: PRC COND" color=black fillcolor=lightpink fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	4 -> 5 [label="" color=black headport=n style="" tailport=s weight=1]
+	5
+	6 [label="Condition E" color=black fillcolor=lightyellow fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	5 -> 6 [label="" color=black headport=n style="" tailport=s weight=1]
+	6
+	7 [label="→: PRC REC" color=black fillcolor=lightpink fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	4 -> 7 [label="" color=black headport=n style="" tailport=s weight=1]
+	7
+	8 [label="Recovery H" color=black fillcolor=lightyellow fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	7 -> 8 [label="" color=black headport=n style="" tailport=s weight=1]
+	8
+	9 [label="Behavior A" color=black fillcolor=lightyellow fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	3 -> 9 [label="" color=black headport=n style="" tailport=s weight=1]
+	9
+	10 [label="→: MRS " color=black fillcolor=lightpink fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	2 -> 10 [label="" color=black headport=n style="" tailport=s weight=1]
+	10
+	11 [label="→ᵣ: HOC MRS " color=black fillcolor=indianred fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	10 -> 11 [label="" color=black headport=n style="" tailport=s weight=1]
+	11
+	12 [label="?: HOC MRS " color=black fillcolor=lightcyan fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	11 -> 12 [label="" color=black headport=n style="" tailport=s weight=1]
+	12
+	13 [label="→: HOC COND" color=black fillcolor=lightpink fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	12 -> 13 [label="" color=black headport=n style="" tailport=s weight=1]
+	13
+	14 [label="Condition F" color=black fillcolor=lightyellow fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	13 -> 14 [label="" color=black headport=n style="" tailport=s weight=1]
+	14
+	15 [label="→: HOC REC" color=black fillcolor=lightpink fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	12 -> 15 [label="" color=black headport=n style="" tailport=s weight=1]
+	15
+	16 [label="Recovery I" color=black fillcolor=lightyellow fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	15 -> 16 [label="" color=black headport=n style="" tailport=s weight=1]
+	16
+	17 [label="Behavior B" color=black fillcolor=lightyellow fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	11 -> 17 [label="" color=black headport=n style="" tailport=s weight=1]
+	17
+	18 [label="→: MRS " color=black fillcolor=lightpink fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	2 -> 18 [label="" color=black headport=n style="" tailport=s weight=1]
+	18
+	19 [label="Behavior C" color=black fillcolor=lightyellow fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	18 -> 19 [label="" color=black headport=n style="" tailport=s weight=1]
+	19
+	20 [label="?: POC MRS " color=black fillcolor=lightcyan fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	18 -> 20 [label="" color=black headport=n style="" tailport=s weight=1]
+	20
+	21 [label="→: POC COND" color=black fillcolor=lightpink fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	20 -> 21 [label="" color=black headport=n style="" tailport=s weight=1]
+	21
+	22 [label="Condition G" color=black fillcolor=lightyellow fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	21 -> 22 [label="" color=black headport=n style="" tailport=s weight=1]
+	22
+	23 [label="→: POC REC" color=black fillcolor=lightpink fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	20 -> 23 [label="" color=black headport=n style="" tailport=s weight=1]
+	23
+	24 [label="Recovery J" color=black fillcolor=lightyellow fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	23 -> 24 [label="" color=black headport=n style="" tailport=s weight=1]
+	24
+	25 [label="?: MRS" color=black fillcolor=lightcyan fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	2 -> 25 [label="" color=black headport=n style="" tailport=s weight=1]
+	25
+	26 [label="R∞: Retry n=3" color=black fillcolor=moccasin fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	25 -> 26 [label="" color=black headport=n style="" tailport=s weight=1]
+	26
+	27 [label="→" color=black fillcolor=lightpink fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.4]
+	26 -> 27 [label="" color=black headport=n style="" tailport=s weight=1]
+	27
+	30 [label="→: MRS " color=black fillcolor=lightpink fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	27 -> 30 [label="" color=black headport=n style="" tailport=s weight=1]
+	30
+	31 [label="Behavior D" color=black fillcolor=lightyellow fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	30 -> 31 [label="" color=black headport=n style="" tailport=s weight=1]
+	31
+	32 [label="→: REC RETRY" color=black fillcolor=lightpink fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	25 -> 32 [label="" color=black headport=n style="" tailport=s weight=1]
+	32
+	33 [label="Recovery H" color=black fillcolor=lightyellow fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	32 -> 33 [label="" color=black headport=n style="" tailport=s weight=1]
+	33
+	34 [label="→: MRS " color=black fillcolor=lightpink fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	2 -> 34 [label="" color=black headport=n style="" tailport=s weight=1]
+	34
+	35 [label="?: ACTION REC MRS" color=black fillcolor=lightcyan fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	34 -> 35 [label="" color=black headport=n style="" tailport=s weight=1]
+	35
+	36 [label="Primitive M" color=black fillcolor=powderblue fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	35 -> 36 [label="" color=black headport=n style="" tailport=s weight=1]
+	36
+	37 [label="→: REC" color=black fillcolor=lightpink fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	35 -> 37 [label="" color=black headport=n style="" tailport=s weight=1]
+	37
+	38 [label="Recovery I" color=black fillcolor=lightyellow fontsize=12.0 height=0.3 shape=box style="rounded,filled" width=0.1]
+	37 -> 38 [label="" color=black headport=n style="" tailport=s weight=1]
+	38
+	title [label="Each Behavior has its own MRS activated" fontsize=12 height=0.3 style=dashed]
+}
